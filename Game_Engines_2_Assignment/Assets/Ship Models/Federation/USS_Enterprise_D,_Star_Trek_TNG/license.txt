@@ -1,0 +1,11 @@
+Model Information:
+* title:	USS Enterprise D, Star Trek TNG
+* source:	https://sketchfab.com/3d-models/uss-enterprise-d-star-trek-tng-e3118c97914342b3ad7dd957c4b4ce4e
+* author:	HaughtyGrayAlien (https://sketchfab.com/HaughtyGrayAlien)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "USS Enterprise D, Star Trek TNG" (https://sketchfab.com/3d-models/uss-enterprise-d-star-trek-tng-e3118c97914342b3ad7dd957c4b4ce4e) by HaughtyGrayAlien (https://sketchfab.com/HaughtyGrayAlien) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Star Trek - Akira Class
+* source:	https://sketchfab.com/3d-models/star-trek-akira-class-84b459f462ec437b9e4a165ab98cee51
+* author:	Wholock (https://sketchfab.com/wholock)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Star Trek - Akira Class" (https://sketchfab.com/3d-models/star-trek-akira-class-84b459f462ec437b9e4a165ab98cee51) by Wholock (https://sketchfab.com/wholock) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
