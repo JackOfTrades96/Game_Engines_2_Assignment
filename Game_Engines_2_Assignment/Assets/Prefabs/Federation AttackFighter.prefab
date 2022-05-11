@@ -51,7 +51,6 @@ GameObject:
   - component: {fileID: 6937919056131144059}
   - component: {fileID: 586119329842316077}
   - component: {fileID: 8129733301801956829}
-  - component: {fileID: 2841750606467140467}
   - component: {fileID: 7060597511774473536}
   - component: {fileID: 7926478082770081687}
   m_Layer: 0
@@ -301,28 +300,6 @@ MonoBehaviour:
   ship: {fileID: 0}
   targetGameObject: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
---- !u!114 &2841750606467140467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3489986672439220740}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5cd444fb7bd95548a43738fdeff451b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 1
-  force: {x: 0, y: 0, z: 0}
-  ship: {fileID: 0}
-  target: {fileID: 0}
-  turnSide: 0
-  turnSpeed: 0.7
-  desiredRotation: {x: 0, y: 0, z: 0, w: 0}
-  marginOfErrorDegrees: 20
-  initPos: {x: 0, y: 0, z: 0}
-  complete: 0
 --- !u!54 &7060597511774473536
 Rigidbody:
   m_ObjectHideFlags: 0

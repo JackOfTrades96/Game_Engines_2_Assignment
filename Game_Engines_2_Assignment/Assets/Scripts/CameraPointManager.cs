@@ -1,45 +1,43 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraPositionManager : MonoBehaviour
+public class CameraPointManager : MonoBehaviour
 {
-
-
-    public List<Transform> points = new List<Transform>();
+    public List<Transform> triggers = new List<Transform>();
     public int current = 0;
-
 
 
     void Start()
     {
-        points.Clear();
+        triggers.Clear();
         int count = transform.childCount;
         for (int i = 0; i < count; i++)
         {
-            points.Add(transform.GetChild(i));
+            triggers.Add(transform.GetChild(i));
         }
     }
 
+
     public Transform GetCurrentPoint()
     {
-        Transform pointToReturn = points[current];
+        Transform pointToReturn = triggers[current];
         return pointToReturn;//the one before advanced
     }
 
 
     public Transform GetNextPoint()
     {
-        Transform pointToReturn = points[current];
+        Transform pointToReturn = triggers[current];
         AdvanceToNext();
         return pointToReturn;//the one before advanced
     }
 
 
+
     public void AdvanceToNext()
     {
-        if (current != points.Count - 1)
+        if (current != triggers.Count - 1)
         {
             current++;
         }
@@ -47,11 +45,8 @@ public class CameraPositionManager : MonoBehaviour
 
     public bool IsLast()
     {
-        return current == points.Count - 1;
+        return current == triggers.Count - 1;
     }
+
+
 }
-
-
-   
-    
-

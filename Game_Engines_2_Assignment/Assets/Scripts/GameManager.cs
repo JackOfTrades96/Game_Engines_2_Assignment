@@ -6,16 +6,21 @@ using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     public float timeToWaitBeforeStarting = 2;
-
     public CameraController cameraController;
-    public CameraPositionManager cameraPositionManager;
-  
+    public CameraPointManager cameraPointManager;
     public TriggerManager triggerManager;
 
     public Transform cameraPoint1;
+    public Transform cameraPoint2;
+    public Transform cameraPoint3;
+    public Transform cameraPoint4;
+    public Transform cameraPoint5;
+    public Transform cameraPoint6;
+    public Transform cameraPoint7;
 
-  
-  
+
+
+
     //Events   
     public UnityEvent[] events;
     [SerializeField]
@@ -87,12 +92,10 @@ public class GameManager : MonoBehaviour
 
         currentEvent = 0;
         StartCoroutine(NextSequence(timeToWaitBeforeStarting));
-        cameraPositionManager.GetNextPoint().gameObject.SetActive(true);
 
-       cameraController.SetCamFollowAndLook(cameraController.tra)
-       
+        
 
-
+      
     }
 
 
@@ -112,7 +115,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Warp Sequence");
 
         triggerManager.GetNextPoint().gameObject.SetActive(true);
-  
+        cameraController.SetCamLookAt(cameraPoint1.transform);
+        cameraController.SetCamFollow(Defiant.transform, 1);
 
 
 
@@ -122,25 +126,20 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void Sequence_1_WarpSequence_2( )
+    public void Sequence_1_WarpSequence_2()
     {
-       
-
+      
         triggerManager.GetNextPoint().gameObject.SetActive(true);
-        
-
-
-
+        cameraController.SetCamLookAt(cameraPoint2.transform);
+        cameraController.SetCamFollow(Defiant.transform, 2);
 
     }
 
     public void Sequence_1_WarpSequence_3()
     {
-       
-
         triggerManager.GetNextPoint().gameObject.SetActive(true);
-      
-
+        cameraController.SetCamLookAt(cameraPoint3.transform);
+        cameraController.SetCamFollow(FederationFighter12.transform, 3);
 
 
     }
@@ -149,7 +148,9 @@ public class GameManager : MonoBehaviour
     {
       
         triggerManager.GetNextPoint().gameObject.SetActive(true);
-       
+        cameraController.SetCamLookAt(cameraPoint4.transform);
+        cameraController.SetCamFollow(FederationFighter11.transform, 4);
+
 
 
 
@@ -171,7 +172,9 @@ public class GameManager : MonoBehaviour
         FederationFighter2.GetComponent<Follow>().enabled = true;
         FederationFighter3.GetComponent<Follow>().enabled = true;
 
-     
+        cameraController.SetCamLookAt(cameraPoint5.transform);
+        cameraController.SetCamFollow(FederationFighter1.transform, 3);
+
 
 
 
@@ -187,13 +190,16 @@ public class GameManager : MonoBehaviour
             FederationFighter5.GetComponent<Follow>().path = FederationFighterAttackPath2;
             FederationFighter6.GetComponent<Follow>().path = FederationFighterAttackPath3;
 
-        
+            FederationFighter4.GetComponent<Arrive>().enabled = false;
+            FederationFighter5.GetComponent<Arrive>().enabled = false;
+            FederationFighter6.GetComponent<Arrive>().enabled = false;
 
+            FederationFighter1.GetComponent<Follow>().enabled = true;
+            FederationFighter2.GetComponent<Follow>().enabled = true;
+            FederationFighter3.GetComponent<Follow>().enabled = true;
 
-
-
-
-
+            cameraController.SetCamLookAt(cameraPoint6.transform);
+            cameraController.SetCamFollow(FederationFighter4.transform, 4);
 
     }
 
@@ -207,11 +213,16 @@ public class GameManager : MonoBehaviour
         FederationFighter8.GetComponent<Follow>().path = FederationFighterAttackPath2;
         FederationFighter9.GetComponent<Follow>().path = FederationFighterAttackPath3;
 
+        FederationFighter7.GetComponent<Arrive>().enabled = false;
+        FederationFighter8.GetComponent<Arrive>().enabled = false;
+        FederationFighter9.GetComponent<Arrive>().enabled = false;
 
+        FederationFighter7.GetComponent<Follow>().enabled = true;
+        FederationFighter8.GetComponent<Follow>().enabled = true;
+        FederationFighter9.GetComponent<Follow>().enabled = true;
 
-      
-
-
+        cameraController.SetCamLookAt(cameraPoint7.transform);
+        cameraController.SetCamFollow(FederationFighter7.transform, 3);
     }
 
 
