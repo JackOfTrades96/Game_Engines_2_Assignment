@@ -8,7 +8,7 @@ Class Group: DT508 Game Design
 
 # Description of the project
 
-[Watch  Video here]()
+[Watch  Video here](https://www.youtube.com/watch?v=3mGL9wHEGiY)
 
 # Events Summary
 1. Camera Switch between Fleet as they approach enemy.
