@@ -56,6 +56,7 @@ I used Unity Events to carry each step. The Triggers where used to iniate the st
 
 
 | Asset | Source |
+|-----------|-----------|
 |Defiant Model|https://www.trekmeshes.ch/meshes/meshesdual.php?DS=DS&MAX=MAX&LWO=LWO&COB=COB&Federation=Federation&Romulan=---&Klingon=---&Borg=---&Jemhadar=---&Cardassian=---&Others=---&Ship=Ship&Noncanon=---&Station=---&Shuttle=---&Other=---&SearchDay=0&SearchMonth=0&SearchYear=0&SearchWord=&Item=30&Zoomin=1&ZoomItem=DEFIANT|
 |Galaxy Model|https://sketchfab.com/3d-models/uss-enterprise-d-star-trek-tng-e3118c97914342b3ad7dd957c4b4ce4e|
 |Nebula  Model|https://www.trekmeshes.ch/meshes/meshesdual.php?DS=DS&MAX=MAX&LWO=LWO&COB=COB&Federation=Federation&Romulan=---&Klingon=---&Borg=---&Jemhadar=---&Cardassian=---&Others=---&Ship=Ship&Noncanon=---&Station=---&Shuttle=---&Other=---&SearchDay=0&SearchMonth=0&SearchYear=0&SearchWord=&Item=15&Zoomin=1&ZoomItem=NEBULA|
