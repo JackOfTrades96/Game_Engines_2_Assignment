@@ -26,7 +26,7 @@ public class StateMachine : MonoBehaviour
     private IEnumerator coroutine;
 
     public int updatesPerSecond = 5;
-    // Use this for initialization
+   
     void Start()
     {
 

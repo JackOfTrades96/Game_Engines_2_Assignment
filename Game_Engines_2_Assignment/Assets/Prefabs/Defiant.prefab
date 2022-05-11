@@ -243,8 +243,6 @@ GameObject:
   - component: {fileID: 1654914240193557505}
   - component: {fileID: 1654914240193557504}
   - component: {fileID: 1654914240193557511}
-  - component: {fileID: 1654914240193557510}
-  - component: {fileID: 1654914240193557509}
   - component: {fileID: 1654914240193557508}
   m_Layer: 0
   m_Name: Defiant
@@ -318,7 +316,7 @@ MonoBehaviour:
   self: {fileID: 0}
   health: 5
   enemy: {fileID: 0}
-  Tag: DarkUnit
+  Tag: Team2
   Range: 250
   maxRetreatDistance: 150
   retreatDistance: 0
@@ -489,44 +487,6 @@ MonoBehaviour:
   ship: {fileID: 0}
   targetGameObject: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
---- !u!114 &1654914240193557510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654914240193557514}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e7f0e789254f1348b7eb8209003cbf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destinationPos: {x: 0, y: 0, z: 0}
-  faceDestinationComplete: 0
-  radius: 15
-  debugSpheres: {fileID: 0}
---- !u!114 &1654914240193557509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654914240193557514}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5cd444fb7bd95548a43738fdeff451b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 1
-  force: {x: 0, y: 0, z: 0}
-  ship: {fileID: 0}
-  target: {fileID: 0}
-  turnSide: 0
-  turnSpeed: 0.7
-  desiredRotation: {x: 0, y: 0, z: 0, w: 0}
-  marginOfErrorDegrees: 20
-  initPos: {x: 0, y: 0, z: 0}
-  complete: 0
 --- !u!54 &1654914240193557508
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -554,7 +514,7 @@ GameObject:
   - component: {fileID: 1654914241038354739}
   m_Layer: 0
   m_Name: Tag
-  m_TagString: LightUnit
+  m_TagString: Team1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

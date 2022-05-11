@@ -19,8 +19,6 @@ GameObject:
   - component: {fileID: 6525602656445596182}
   - component: {fileID: 4982742432557945222}
   - component: {fileID: 8910030932480874789}
-  - component: {fileID: -1441308755807539912}
-  - component: {fileID: -7240476567531156592}
   - component: {fileID: -7208022798869883156}
   m_Layer: 0
   m_Name: Jem'Hadar Fighter
@@ -90,12 +88,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ff4d47b622caf4d81c94500d42bd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   health: 0
   enemy: {fileID: 0}
   Tag: 
   Range: 100
   maxRetreatDistance: 150
   retreatDistance: 0
+  FirePoint: {fileID: 0}
+  FirePoint2: {fileID: 0}
+  FirePoint3: {fileID: 0}
+  FirePoint4: {fileID: 0}
+  angle: 0
   phaser: {fileID: 0}
   phaserAudio: {fileID: 0}
   phaserCooldown: 10
@@ -230,44 +234,6 @@ MonoBehaviour:
   ship: {fileID: 0}
   targetGameObject: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
---- !u!114 &-1441308755807539912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6918597781522476682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e7f0e789254f1348b7eb8209003cbf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destinationPos: {x: 0, y: 0, z: 0}
-  faceDestinationComplete: 0
-  radius: 15
-  debugSpheres: {fileID: 0}
---- !u!114 &-7240476567531156592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6918597781522476682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5cd444fb7bd95548a43738fdeff451b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 1
-  force: {x: 0, y: 0, z: 0}
-  ship: {fileID: 0}
-  target: {fileID: 0}
-  turnSide: 0
-  turnSpeed: 0.7
-  desiredRotation: {x: 0, y: 0, z: 0, w: 0}
-  marginOfErrorDegrees: 20
-  initPos: {x: 0, y: 0, z: 0}
-  complete: 0
 --- !u!54 &-7208022798869883156
 Rigidbody:
   m_ObjectHideFlags: 0

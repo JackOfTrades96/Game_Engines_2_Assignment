@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 4568790002638654016}
   m_Layer: 0
   m_Name: Tag
-  m_TagString: DarkUnit
+  m_TagString: Team2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,8 +171,6 @@ GameObject:
   - component: {fileID: 5488890524064476676}
   - component: {fileID: 8529576002153596896}
   - component: {fileID: 156187981925483691}
-  - component: {fileID: 5993065466405865480}
-  - component: {fileID: 6167266212609895988}
   - component: {fileID: 6011814257361210202}
   - component: {fileID: 4982591425295849748}
   m_Layer: 0
@@ -251,7 +249,7 @@ MonoBehaviour:
   self: {fileID: 8757249458307032760}
   health: 50
   enemy: {fileID: 0}
-  Tag: LightUnit
+  Tag: Team1
   Range: 1500
   maxRetreatDistance: 2000
   retreatDistance: 0
@@ -422,44 +420,6 @@ MonoBehaviour:
   ship: {fileID: 0}
   targetGameObject: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
---- !u!114 &5993065466405865480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8757249458307032760}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e7f0e789254f1348b7eb8209003cbf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destinationPos: {x: 0, y: 0, z: 0}
-  faceDestinationComplete: 0
-  radius: 15
-  debugSpheres: {fileID: 0}
---- !u!114 &6167266212609895988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8757249458307032760}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5cd444fb7bd95548a43738fdeff451b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 1
-  force: {x: 0, y: 0, z: 0}
-  ship: {fileID: 0}
-  target: {fileID: 0}
-  turnSide: 0
-  turnSpeed: 0.7
-  desiredRotation: {x: 0, y: 0, z: 0, w: 0}
-  marginOfErrorDegrees: 20
-  initPos: {x: 0, y: 0, z: 0}
-  complete: 0
 --- !u!54 &6011814257361210202
 Rigidbody:
   m_ObjectHideFlags: 0

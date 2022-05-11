@@ -7,16 +7,14 @@ TagManager:
   - SquadLeader
   - Patrol
   - ShipSquad
-  - LightUnit
-  - DarkUnit
-  - Team 2
-  - Team 1
   - Phaser
   - Allies
   - Enemy
   - Fighter
   - Ship
   - Cameras
+  - Team1
+  - Team2
   layers:
   - Default
   - TransparentFX

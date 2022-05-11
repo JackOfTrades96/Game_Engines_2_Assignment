@@ -253,13 +253,7 @@ public class RetreatState : State
             if(distanceToEnemy > owner.GetComponent<ShipCombatController>().retreatDistance)
             {
                 owner.GetComponent<Flee>().enabled = false;
-                owner.GetComponent<ShipTurning>().enabled = true;
-            }
-
-            if(owner.GetComponent<ShipTurning>().enabled == true && owner.GetComponent<ShipTurning>().complete == true)
-            {
-                owner.GetComponent<ShipTurning>().enabled = false;
-                owner.ChangeState(new AttackState());
+               
             }
 
             else
@@ -274,7 +268,7 @@ public class RetreatState : State
 
     public override void Exit()
     {
-        owner.GetComponent<ShipTurning>().enabled = false;
+       
         owner.GetComponent<Flee>().enabled = false;
     }
 }

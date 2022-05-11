@@ -21,12 +21,10 @@ GameObject:
   - component: {fileID: 1035837726565856067}
   - component: {fileID: 1035837726565856066}
   - component: {fileID: 1035837726565856069}
-  - component: {fileID: 1035837726565856068}
-  - component: {fileID: 1035837726565856071}
   - component: {fileID: 1035837726565856070}
   m_Layer: 0
   m_Name: Galaxy
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,12 +91,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ff4d47b622caf4d81c94500d42bd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   health: 5
   enemy: {fileID: 0}
-  Tag: DarkUnit
+  Tag: Team2
   Range: 250
   maxRetreatDistance: 150
   retreatDistance: 0
+  FirePoint: {fileID: 0}
+  FirePoint2: {fileID: 0}
+  FirePoint3: {fileID: 0}
+  FirePoint4: {fileID: 0}
+  angle: 0
   phaser: {fileID: 5804110813595587965, guid: 5a06b258e695d1445a117c8d736a0a24, type: 3}
   phaserAudio: {fileID: 0}
   phaserCooldown: 10
@@ -261,44 +265,6 @@ MonoBehaviour:
   ship: {fileID: 0}
   targetGameObject: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
---- !u!114 &1035837726565856068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035837726565856072}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e7f0e789254f1348b7eb8209003cbf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destinationPos: {x: 0, y: 0, z: 0}
-  faceDestinationComplete: 0
-  radius: 15
-  debugSpheres: {fileID: 0}
---- !u!114 &1035837726565856071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035837726565856072}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5cd444fb7bd95548a43738fdeff451b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 1
-  force: {x: 0, y: 0, z: 0}
-  ship: {fileID: 0}
-  target: {fileID: 0}
-  turnSide: 0
-  turnSpeed: 0.7
-  desiredRotation: {x: 0, y: 0, z: 0, w: 0}
-  marginOfErrorDegrees: 20
-  initPos: {x: 0, y: 0, z: 0}
-  complete: 0
 --- !u!54 &1035837726565856070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -326,7 +292,7 @@ GameObject:
   - component: {fileID: 1035837727394532977}
   m_Layer: 0
   m_Name: Tag
-  m_TagString: LightUnit
+  m_TagString: Team1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

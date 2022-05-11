@@ -22,7 +22,7 @@ public class CameraPointManager : MonoBehaviour
     public Transform GetCurrentPoint()
     {
         Transform pointToReturn = triggers[current];
-        return pointToReturn;//the one before advanced
+        return pointToReturn;
     }
 
 
@@ -30,7 +30,7 @@ public class CameraPointManager : MonoBehaviour
     {
         Transform pointToReturn = triggers[current];
         AdvanceToNext();
-        return pointToReturn;//the one before advanced
+        return pointToReturn;
     }
 
 

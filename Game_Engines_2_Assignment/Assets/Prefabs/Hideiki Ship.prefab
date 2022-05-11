@@ -19,8 +19,6 @@ GameObject:
   - component: {fileID: 214772266064150510}
   - component: {fileID: 604881806664895003}
   - component: {fileID: -4904500837911473178}
-  - component: {fileID: -5874509585366342661}
-  - component: {fileID: -3026932447095098595}
   - component: {fileID: -2360190564789496698}
   m_Layer: 0
   m_Name: Hideiki Ship
@@ -41,6 +39,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1826543509859013461}
+  - {fileID: 6540147767965997463}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -90,12 +89,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ff4d47b622caf4d81c94500d42bd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   health: 0
   enemy: {fileID: 0}
-  Tag: 
+  Tag: Team1
   Range: 100
   maxRetreatDistance: 150
   retreatDistance: 0
+  FirePoint: {fileID: 0}
+  FirePoint2: {fileID: 0}
+  FirePoint3: {fileID: 0}
+  FirePoint4: {fileID: 0}
+  angle: 0
   phaser: {fileID: 0}
   phaserAudio: {fileID: 0}
   phaserCooldown: 10
@@ -106,7 +111,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2221284896370940078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84240d3991fb1844d9d539cd68b554e8, type: 3}
   m_Name: 
@@ -125,7 +130,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2221284896370940078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6304a50a2e5e3bd439f54d63ff173b8b, type: 3}
   m_Name: 
@@ -144,7 +149,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2221284896370940078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b08d47409a6ffe4a9b34b801fe5a3c9, type: 3}
   m_Name: 
@@ -161,7 +166,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2221284896370940078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b042f5ec33291d84886502d21095d43a, type: 3}
   m_Name: 
@@ -179,7 +184,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2221284896370940078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79f9cdba7b77e1448952b36e1003741a, type: 3}
   m_Name: 
@@ -220,7 +225,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2221284896370940078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b32b3193eb797848ad92b762ae243a1, type: 3}
   m_Name: 
@@ -230,44 +235,6 @@ MonoBehaviour:
   ship: {fileID: 0}
   targetGameObject: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
---- !u!114 &-5874509585366342661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2221284896370940078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e7f0e789254f1348b7eb8209003cbf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destinationPos: {x: 0, y: 0, z: 0}
-  faceDestinationComplete: 0
-  radius: 15
-  debugSpheres: {fileID: 0}
---- !u!114 &-3026932447095098595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2221284896370940078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5cd444fb7bd95548a43738fdeff451b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 1
-  force: {x: 0, y: 0, z: 0}
-  ship: {fileID: 0}
-  target: {fileID: 0}
-  turnSide: 0
-  turnSpeed: 0.7
-  desiredRotation: {x: 0, y: 0, z: 0, w: 0}
-  marginOfErrorDegrees: 20
-  initPos: {x: 0, y: 0, z: 0}
-  complete: 0
 --- !u!54 &-2360190564789496698
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -284,6 +251,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &3550233064489391049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6540147767965997463}
+  m_Layer: 0
+  m_Name: Tag
+  m_TagString: Team2
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6540147767965997463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550233064489391049}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2221284896370940074}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2221284897581724862
 PrefabInstance:
   m_ObjectHideFlags: 0

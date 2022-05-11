@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour
     {
         triggerManager.GetNextPoint().gameObject.SetActive(true);
         cameraController.SetCamLookAt(cameraPoint3.transform);
-        cameraController.SetCamFollow(FederationFighter12.transform, 3);
+        cameraController.SetCamFollow(FederationFighter12.transform, 2);
 
 
     }
@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
       
         triggerManager.GetNextPoint().gameObject.SetActive(true);
         cameraController.SetCamLookAt(cameraPoint4.transform);
-        cameraController.SetCamFollow(FederationFighter11.transform, 4);
+        cameraController.SetCamFollow(FederationFighter11.transform, 2);
 
 
 
@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour
         FederationFighter2.GetComponent<Follow>().enabled = true;
         FederationFighter3.GetComponent<Follow>().enabled = true;
 
-        cameraController.SetCamLookAt(cameraPoint5.transform);
+        cameraController.SetCamLookAt(FederationFighter1.transform);
         cameraController.SetCamFollow(FederationFighter1.transform, 3);
 
 
@@ -199,7 +199,7 @@ public class GameManager : MonoBehaviour
             FederationFighter3.GetComponent<Follow>().enabled = true;
 
             cameraController.SetCamLookAt(cameraPoint6.transform);
-            cameraController.SetCamFollow(FederationFighter4.transform, 4);
+            cameraController.SetCamFollow(FederationFighter4.transform, 3);
 
     }
 

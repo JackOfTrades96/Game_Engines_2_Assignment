@@ -129,7 +129,7 @@ MonoBehaviour:
   self: {fileID: 3489986672439220740}
   health: 5
   enemy: {fileID: 0}
-  Tag: DarkUnit
+  Tag: Team2
   Range: 750
   maxRetreatDistance: 1000
   retreatDistance: 0
@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 23103660026157300}
   m_Layer: 0
   m_Name: Tag
-  m_TagString: LightUnit
+  m_TagString: Team1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
