@@ -9,7 +9,8 @@ public class ShipSquad : MonoBehaviour
     public int maxMembers = 0;
     public int numSquadMembers = 0;
     public GameObject leader;
-    public float ShipDistance;
+    public float ShipDistacne = 100f;
+   
 
     private List<Vector3> squadPositions = new List<Vector3>();
     private List<Vector3> squadOffsets = new List<Vector3>();
@@ -68,7 +69,7 @@ public class ShipSquad : MonoBehaviour
 
     void GenerateSquadPositions()
     {
-            
+       
 
             for (int i = 0; i < maxMembers; i++)
             {
@@ -83,7 +84,7 @@ public class ShipSquad : MonoBehaviour
                     side = -1;
                 }
 
-                float appliedShipDistance = ShipDistance + (Mathf.Ceil((i + 1.0f) / 2.0f) - 1) * ShipDistance;
+                float appliedShipDistance = ShipDistacne + (Mathf.Ceil((i + 1.0f) / 2.0f) - 1) * ShipDistacne;
 
               
                 GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -115,9 +116,19 @@ public class ShipSquad : MonoBehaviour
     public Vector3 getSquadOffset(GameObject follower)
     {
         int index = squadMembers.IndexOf(follower);
-     
+
+
+        try
+        {
             Vector3 offset = squadOffsets[index];
             return offset;
+        }
+            
+        catch(Exception exception)
+        {
+            return new Vector3(0, 0, 0);
+        }
+
 
       
     }

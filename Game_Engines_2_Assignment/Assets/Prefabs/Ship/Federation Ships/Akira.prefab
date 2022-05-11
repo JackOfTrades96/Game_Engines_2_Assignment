@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   enemy: {fileID: 0}
-  Tag: 
+  Tag: LightUnit
   Range: 100
   maxRetreatDistance: 150
   retreatDistance: 0

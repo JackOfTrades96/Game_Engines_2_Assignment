@@ -5,31 +5,33 @@ using UnityEngine;
 
 public class CameraPositionManager : MonoBehaviour
 {
-    public List<Transform> cameraPositions = new List<Transform>();
+
+
+    public List<Transform> points = new List<Transform>();
     public int current = 0;
 
 
 
     void Start()
     {
-        cameraPositions.Clear();
+        points.Clear();
         int count = transform.childCount;
         for (int i = 0; i < count; i++)
         {
-            cameraPositions.Add(transform.GetChild(i));
+            points.Add(transform.GetChild(i));
         }
     }
 
     public Transform GetCurrentPoint()
     {
-        Transform pointToReturn = cameraPositions[current];
+        Transform pointToReturn = points[current];
         return pointToReturn;//the one before advanced
     }
 
 
     public Transform GetNextPoint()
     {
-        Transform pointToReturn = cameraPositions[current];
+        Transform pointToReturn = points[current];
         AdvanceToNext();
         return pointToReturn;//the one before advanced
     }
@@ -37,7 +39,7 @@ public class CameraPositionManager : MonoBehaviour
 
     public void AdvanceToNext()
     {
-        if (current != cameraPositions.Count - 1)
+        if (current != points.Count - 1)
         {
             current++;
         }
@@ -45,6 +47,11 @@ public class CameraPositionManager : MonoBehaviour
 
     public bool IsLast()
     {
-        return current == cameraPositions.Count - 1;
+        return current == points.Count - 1;
     }
 }
+
+
+   
+    
+

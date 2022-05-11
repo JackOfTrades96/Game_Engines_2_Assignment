@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1084206806941072527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 506604822901501203}
+  m_Layer: 0
+  m_Name: Tag
+  m_TagString: DarkUnit
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &506604822901501203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084206806941072527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6484298182407104791}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6356436681067649585
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,6 +71,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9013050898670920874}
+  - {fileID: 506604822901501203}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -131,16 +162,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   enemy: {fileID: 0}
-  Enemy: 
+  Tag: 
   Range: 100
   maxRetreatDistance: 150
   retreatDistance: 0
   phaser: {fileID: 0}
   phaserAudio: {fileID: 0}
   phaserCooldown: 10
-  torpedo: {fileID: 0}
-  torpedoAudio: {fileID: 0}
-  torpedoCooldown: 10
 --- !u!114 &8032128251794057305
 MonoBehaviour:
   m_ObjectHideFlags: 0

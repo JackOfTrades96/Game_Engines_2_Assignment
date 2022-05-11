@@ -4,117 +4,113 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform LookAt;
-    public Transform ToFollow;
-    public Vector3 FollowOffset;
-    public float movementLerpSpeed = 2f;
-    public float rotationLerpSpeed = 2f;
+    public Transform gameObjectToLookAt;
+    public Transform gameObjectToFollow;
+    public Vector3 objectFollowOffset;
+    public float moveLerpSpeed = 2f;
+    public float rotLerpSpeed = 2f;
 
-    public Vector3 panningValue = new Vector3(0, 0, 0);
+    public Vector3 panningAmount = new Vector3(0, 0, 0);
 
-    public Vector3[] cameraOffsets;
-    public int currentOffsetOIndex = 0;
-    public float magnitudeDecreaseMultiplier = 3f;
+    public Vector3[] cameraOffsets; //for having cam a certain distance away from a target
+    public int curOffsetIndex = 0;
+    public float magDecreaseMult = 3f;
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    // late update for camera calculations after physics updates
+    void LateUpdate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void LateUpdate()
-    {
-        float magnitudeIncrease = 0;
-
-        if(LookAt && LookAt.GetComponent<Rigidbody>())
+        //follow faster to keep up with moving objects
+        float magIncrease = 0;
+        if (gameObjectToLookAt && gameObjectToLookAt.GetComponent<Rigidbody>())
         {
-            magnitudeIncrease = LookAt.GetComponent<Rigidbody>().velocity.magnitude / magnitudeDecreaseMultiplier;
+            magIncrease = gameObjectToLookAt.GetComponent<Rigidbody>().velocity.magnitude / magDecreaseMult;
         }
 
-
-        if(ToFollow != null)
+        //Follow object with offset or pan if no target
+        if (gameObjectToFollow != null)
         {
-            Vector3 ToPosition = transform.position + transform.TransformDirection(panningValue);
-            transform.position = Vector3.Lerp(transform.position, ToPosition, Time.deltaTime * movementLerpSpeed);
+            Vector3 toPos = gameObjectToFollow.position + gameObjectToFollow.TransformDirection(objectFollowOffset);
+            //lerp but do it faster if following a ship to keep up with it
+            transform.position = Vector3.Lerp(transform.position, toPos, Time.deltaTime * (moveLerpSpeed + magIncrease));
+        }
+        else
+        {
+            Vector3 toPos = transform.position + transform.TransformDirection(panningAmount);
+            transform.position = Vector3.Lerp(transform.position, toPos, Time.deltaTime * moveLerpSpeed);
         }
 
-
-        if(LookAt)
+        //Stay looking in direction
+        if (gameObjectToLookAt)
         {
-            Vector3 relativePosition = LookAt.transform.position - transform.position;
-            Quaternion toRotation = Quaternion.LookRotation(relativePosition);
-            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * (rotationLerpSpeed + magnitudeIncrease));
+            Vector3 relativePos = gameObjectToLookAt.transform.position - transform.position;
+            Quaternion toRotation = Quaternion.LookRotation(relativePos);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * (rotLerpSpeed + magIncrease));
         }
-
     }
 
-
-    public void CameraLookAt(Transform gameobject)
-    {
-        LookAt = gameobject;
-    }
-
-    public void CameraFollow(Transform gameobject, int offsetIndex)
-    {
-        ToFollow = gameobject;
-        Vector3 offset = GetOffset(offsetIndex);
-        FollowOffset = offset;
-    }
-
-    public void CameraFollowAndLook(Transform gameObject, int offsetIndex)
-    {
-        ToFollow = gameObject;
-        Vector3 offset = GetOffset(offsetIndex);
-        FollowOffset = offset;
-
-    }
-
-    public void CameraNotFollowing()
-    {
-        ToFollow = null;
-        FollowOffset = Vector3.zero;
-    }
-
-    public void StaticCamera(Transform cameraPosition)
-    {
-        CameraNotFollowing();
-        transform.position = cameraPosition.transform.position;
-        transform.rotation = cameraPosition.transform.rotation;
-    }
-
-
-    public void CameraOffset(Transform obj, int offsetIndex)
+    //set at static point offset from a dynamic object
+    public void SetCameraWithRelativeOffset(Transform obj, int offsetIndex)
     {
         Vector3 offset = GetOffset(offsetIndex);
-        CameraNotFollowing();
+        SetCamNotFollowing();
         transform.position = obj.transform.TransformPoint(offset);
-
+        //transform.position = obj.transform.position+offset;
+        print("obj" + obj.transform.position + ",offset: " + offsetIndex + "," + offset + ", with offset:" + (obj.transform.position + obj.transform.TransformPoint(offset)));
     }
 
+    //set to a static world point and direction
+    public void SetCameraMatchPoint(Transform cameraPoint)
+    {
+        SetCamNotFollowing();
+        transform.position = cameraPoint.transform.position;
+        transform.rotation = cameraPoint.transform.rotation;
+    }
 
+    //move with and look at obj
+    public void SetCamFollowAndLook(Transform obj, int offsetIndex)
+    {
+        SetCamFollow(obj, offsetIndex);
+        SetCamLookAt(obj);
+    }
+
+    //move with obj
+    public void SetCamFollow(Transform obj, int offsetIndex)
+    {
+        Vector3 offset = GetOffset(offsetIndex);
+
+        gameObjectToFollow = obj;
+        objectFollowOffset = offset;
+    }
+
+    //look at obj
+    public void SetCamLookAt(Transform obj)
+    {
+        gameObjectToLookAt = obj;
+    }
+
+    //unset objects
+    public void SetCamNotFollowing()
+    {
+        gameObjectToFollow = null;
+        objectFollowOffset = Vector3.zero;
+    }
+
+    //get offset from set list of static points
     public Vector3 GetOffset(int index)
     {
         Vector3 selectedOffset = cameraOffsets[index];
-        currentOffsetOIndex = index + 1;
+        curOffsetIndex = index + 1;
+        Debug.Log("Get offset: " + curOffsetIndex + ", " + selectedOffset);
 
         return selectedOffset;
-
     }
 
+    //cycle through points
     public Vector3 GetNextOffset()
     {
-        Vector3 selectedOffset = GetOffset(currentOffsetOIndex);
-        currentOffsetOIndex++;
+        Vector3 selectedOffset = GetOffset(curOffsetIndex);
+        curOffsetIndex++;
         return selectedOffset;
     }
-        
 
 }
